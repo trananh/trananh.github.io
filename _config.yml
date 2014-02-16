@@ -1,0 +1,4 @@
+exclude: [".ruby-version"]
+safe: true
+lsi: false
+pygments: true

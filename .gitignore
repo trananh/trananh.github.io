@@ -1,4 +1,8 @@
 # Auto-generated files
 .ruby-version
-Gemfile.lock
+*.gem
+*.lock
+.bundle
+.idea
 _site
+.DS_Store
