@@ -3,9 +3,10 @@
  * A clean, simple stylesheet that aims for
  * a consistent vertical rhythm.
  *
- * Base font height: 16px
+ * Base font height: 15px
  * Base line length: 24px
  *
+ * Based on Mark Reid's stylesheet.
  */
 
 /* Global reset */
@@ -26,7 +27,7 @@ img { -ms-interpolation-mode: bicubic; }
 
 /* IE6 ignores this and uses default size of 16pt */
 html>body {
-    font-size: 16px;
+    font-size: 15px;
 }
 
 p {
@@ -46,7 +47,7 @@ a:hover {
 
 a.pdf:before { 
 	margin-right: 1em;
-	content: url(images/icon_pdf.gif);
+	content: url(images/icon-pdf.gif);
 }
 
 h1, h2, h3, h4 {
@@ -82,7 +83,7 @@ sup {
 
 /* Site */
 #site {
-	max-width: 46em;
+	max-width: 50em;
 	margin: 1.5em auto 3em auto;
 	line-height:1.5em;
 }
@@ -170,8 +171,8 @@ sup {
 	position: absolute;
 	top: 0;
 	right: 0;
-	font-size: 75%;
-	line-height: 1.6em;
+	font-size: 80%;
+	line-height: 1.8em;
 	display: block;
 	margin: 0;
 	width: 50%;
@@ -249,20 +250,6 @@ sup {
 }
 
 
-/* Fancy first letter */
-.emphnext + p:first-letter, p.emphfirst:first-letter {
-	font-size: 48px;
-	padding: 0 0.15em 0 0;
-	margin:  0.05em 0 -0.15em 0;
-	line-height: 1em;
-	float: left;
-}
-
-.emphnext + p:first-line, p.emphfirst:first-line {
-	font-variant: small-caps;
-	font-size: larger;
-}
-
 .right {
     float: right;
     clear: left;
@@ -306,6 +293,22 @@ blockquote {
 	border-top: 1px solid silver;
 	border-bottom: 1px solid silver;
 }
+
+
+/* Fancy first letter */
+.emphnext + p:first-letter, p.emphfirst:first-letter {
+	font-size: 48px;
+	padding: 0 0.15em 0 0;
+	margin:  0.05em 0 -0.15em 0;
+	line-height: 1em;
+	float: left;
+}
+
+.emphnext + p:first-line, p.emphfirst:first-line {
+	font-variant: small-caps;
+	font-size: larger;
+}
+
 
 /* Table */
 table.neat {
