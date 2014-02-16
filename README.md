@@ -1,7 +1,7 @@
 trananh.github.io
 =================
 
-This repository contains the source for my homepage <http://trananh.github.io>.
+This repository contains the source for my [homepage](http://trananh.github.io).
 
 It is based on Mark Reid's [design](http://mark.reid.name), with modifications made by me.
 
@@ -10,11 +10,11 @@ It is based on Mark Reid's [design](http://mark.reid.name), with modifications m
 
 You are welcomed to use this repository as a template for your own website.  However, you may consider
 using Mark Reid's original [version](https://github.com/mreid/mark.reid.name).  If you do decide to
-use my adaptation, it would be appreciated if you link back to my site, but it's not necessary.
+use my adaptation, it would be appreciated if you link back to my site, but not necessary.
 
 While the design is free for use, the _contents_ contained within are not.
-PLEASE ensure that you remove all of my content material from your own upload.
-In particular, do the following:
+PLEASE ensure that you remove all of my content material from your own site.
+In particular, do the following before uploading your website:
 
 * Remove my `data` folder.
 * Remove all of my posts in the `_posts` folder.
