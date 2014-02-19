@@ -1,0 +1,78 @@
+{% if firstpage %}
+{% else %}
+    {% assign firstpage = site.paginate_path | replace: 'page:num', '' %}
+{% endif %}
+
+<div class="pagination">
+    <ul>
+        {% if paginator.total_pages > 5 %}
+            {% if paginator.page > 1 %}
+                <li><a href="{{ firstpage | prepend: site.baseurl | replace: '//', '/' }}" title="First">&laquo;</a></li>
+            {% else %}
+                <li class="disabled"><a href="#">&laquo;</a></li>
+            {% endif %}
+        {% endif %}
+
+        {% if paginator.previous_page %}
+            {% if paginator.previous_page == 1 %}
+                <li><a href="{{ firstpage | prepend: site.baseurl | replace: '//', '/' }}" title="Previous">&lsaquo;</a></li>
+            {% else %}
+                <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}" title="Previous">&lsaquo;</a></li>
+            {% endif %}
+        {% else %}
+            <li class="disabled"><a href="#">&lsaquo;</a></li>
+        {% endif %}
+
+        {% assign start = 1 %}
+        {% assign stop = paginator.total_pages %}
+        {% if paginator.total_pages > 5 %}
+            {% if paginator.page > 3 %}
+                {% assign start = paginator.page | minus:2 %}
+            {% endif %}
+            {% assign stop = start | plus:4 %}
+            {% if stop > paginator.total_pages %}
+                {% assign stop = paginator.total_pages %}
+                {% assign start = stop | minus:4 %}
+            {% endif %}
+        {% endif %}
+
+        {% if start > 1 %}
+            {% assign prev = start | minus:1 %}
+            {% if prev == 1 %}
+                <li><a href="{{ firstpage | prepend: site.baseurl | replace: '//', '/' }}" title="Go to 1">...</a></li>
+            {% else %}
+                <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', prev }}" title="Go to {{prev}}">...</a></li>
+            {% endif %}
+        {% endif %}
+
+        {% for count in (start..stop) %}
+            {% if count == paginator.page %}
+                <li class="disabled"><a href="#">{{ count }}</a></li>
+            {% elsif count == 1 %}
+                <li><a href="{{ firstpage | prepend: site.baseurl | replace: '//', '/' }}" title="{{count}}">{{ count }}</a></li>
+            {% else %}
+                <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', count }}" title="{{count}}">{{ count }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if stop < paginator.total_pages %}
+            {% assign next = stop | plus:1 %}
+            <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', next }}" title="Go to {{next}}">...</a></li>
+        {% endif %}
+
+        {% if paginator.next_page %}
+            <li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}" title="Next">&rsaquo;</a></li>
+        {% else %}
+            <li class="disabled"><a href="#">&rsaquo;</a></li>
+        {% endif %}
+
+        {% if paginator.total_pages > 5 %}
+            {% if paginator.page < paginator.total_pages %}
+                <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', paginator.total_pages }}" title="Last">&raquo;</a></li>
+            {% else %}
+                <li class="disabled"><a href="#">&raquo;</a></li>
+            {% endif %}
+        {% endif %}
+
+    </ul>
+</div>

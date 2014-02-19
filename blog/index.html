@@ -1,0 +1,26 @@
+---
+layout: default
+title: anh &rarr; blog
+---
+
+
+<h1>Personal Blog</h1>
+
+
+<hr style="margin-bottom: 1.5em;"/>
+
+{% for post in paginator.posts %}
+    <div class="section list">
+        <h1 style="text-align: left">{{ post.date | date_to_string }}</h1>
+        <p class="line">
+            <a class="title" href="{{ post.url }}">{{ post.title }}</a>
+            <a class="comments" href="{{ post.url }}#disqus_thread">View Comments</a>
+        </p>
+        <p class="excerpt" style="margin-bottom: 2em;">{{ post.excerpt }}</p>
+    </div>
+{% endfor %}
+
+
+<center>
+    {% include navpagination.html %}
+</center>
