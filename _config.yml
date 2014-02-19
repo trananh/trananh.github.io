@@ -1,4 +1,4 @@
-exclude         : [".ruby-version"]
+exclude         : [".ruby-version", "Gemfile", "Gemfile.lock", "README.md"]
 safe            : true
 lsi             : false
 pygments        : true
@@ -6,4 +6,4 @@ pygments        : true
 paginate        : 5
 paginate_path   : "blog/page:num"
 
-url             : http://trananh.io.github
+url             : http://trananh.github.io

@@ -1,0 +1,31 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+    <title>Anh's Blog</title>
+    <link href="{{ site.url }}/blog/atom.xml" rel="self"/>
+    <link href="{{ site.url }}/blog/"/>
+    <updated>{{ site.time | date_to_xmlschema }}</updated>
+    <id>{{ site.url }}/blog/</id>
+    <author>
+        <name>Anh Tran</name>
+        <uri>{{ site.url }}</uri>
+    </author>
+ 
+    {% for post in site.posts limit:10 %}
+    <entry>
+        <id>id:{{ post.id }}</id>
+        <link type="text/html" rel="alternate"  href="{{ site.url }}{{ post.url }}"/>
+        <title>{{ post.title | xml_escape }}</title>
+        <updated>{{ post.date | date_to_xmlschema }}</updated>
+        <author>
+            <name>Anh Tran</name>
+            <uri>{{ site.url }}</uri>
+        </author>
+        <content type="html">{{ post.content | xml_escape }}</content>
+    </entry>
+    {% endfor %}
+ 
+</feed>

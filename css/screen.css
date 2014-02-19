@@ -223,6 +223,7 @@ sup {
 	position: relative;
 }
 .signature .author {
+    font-size: 16px;
 	font-variant: small-caps;
 	font-style: normal;
 	color: black;
@@ -380,10 +381,12 @@ blockquote {
 	float: left;
 }
 
+/*
 .emphnext + p:first-line, p.emphfirst:first-line {
 	font-variant: small-caps;
 	font-size: larger;
 }
+*/
 
 
 /* Table */
@@ -555,7 +558,6 @@ pre > code {
 	background: white;
 	padding: 4em 3em 1.5em 3em;
 	border: 2px solid #ccc;
-/*	background-image: url(images/grid.png); */
 }
 #disqus_thread {
 	box-shadow: 2px 2px 8px #aaa;
