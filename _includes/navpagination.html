@@ -1,5 +1,4 @@
-{% if firstpage %}
-{% else %}
+{% if firstpage == nil %}
     {% assign firstpage = site.paginate_path | replace: 'page:num', '' %}
 {% endif %}
 
