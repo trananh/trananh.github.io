@@ -11,3 +11,13 @@ url                 : http://trananh.github.io
 # Disqus configs
 comments            : false
 disqus_shortname    : 'trananh'
+
+# sitemap configs
+sitemap:
+    file: "/sitemap.xml"
+    exclude:
+        - "/blog/atom.xml"
+    include_posts:
+        - "/blog/index.html"
+    change_frequency_name: "change_frequency"
+    priority_name: "priority"
