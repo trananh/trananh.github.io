@@ -6,7 +6,6 @@ feed: atom.xml
 keywords: Anh Tran, Blog, Research, Hobbies, Family, Programming
 ---
 
-
 <h1>Personal Blog</h1>
 
 <a href="/blog/atom.xml" title="Recent posts feed">
@@ -31,9 +30,10 @@ keywords: Anh Tran, Blog, Research, Hobbies, Family, Programming
     {% include navpagination.html %}
 </center>
 
+<input type="hidden" id="disqus_shortname" value="{{ site.disqus_shortname }}">
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'trananh'; // required: replace example with your forum shortname
+    var disqus_shortname = document.getElementById('disqus_shortname').value; // required: replace example with your forum shortname
 
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function () {

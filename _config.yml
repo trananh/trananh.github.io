@@ -1,9 +1,13 @@
-exclude         : [".ruby-version", "Gemfile", "Gemfile.lock", "README.md"]
-safe            : true
-lsi             : false
-pygments        : true
+exclude             : [".ruby-version", "Gemfile", "Gemfile.lock", "README.md"]
+safe                : true
+lsi                 : false
+pygments            : true
 
-paginate        : 5
-paginate_path   : "blog/page:num"
+paginate            : 5
+paginate_path       : "blog/page:num"
 
-url             : http://trananh.github.io
+url                 : http://trananh.github.io
+
+# Disqus configs
+comments            : false
+disqus_shortname    : 'trananh'
