@@ -1,5 +1,5 @@
 {% include sharing.html %}
-<div class="social">
+<div class="social" style="width: 59px;">
     <p><span class="fb-like" data-href="{{ page.url | prepend: site.url }}" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></span></p>
     <p><span class="fb-share-button" data-href="{{ page.url | prepend: site.url }}" data-type="button"></span></p>
     <p><span class="g-plusone" data-size="medium" data-annotation="none"></span></p>
@@ -7,37 +7,3 @@
     <p><span><a href="https://twitter.com/share" class="twitter-share-button" data-via="AnhTranX" data-count="none">Tweet</a></span></p>
     <p style="padding-bottom: 0;"><span><script type="IN/Share" data-url="{{ page.url | prepend: site.url }}"></script></span></p>
 </div>
-
-<!-- floating side-nav -->
-<script type='text/javascript'>
-//<![CDATA[
-$(function() {
-    // Stick the #nav to the top of the window
-    var topPadding = 32
-    var nav = $('#navsidebar');
-    var navHomeY = nav.offset().top - topPadding;
-    var isFixed = false;
-    var $w = $(window);
-    $w.scroll(function() {
-        var scrollTop = $w.scrollTop();
-        var shouldBeFixed = scrollTop > navHomeY;
-        if (shouldBeFixed && !isFixed) {
-            nav.css({
-                position: 'fixed',
-                top: topPadding,
-                left: nav.offset().left,
-                width: nav.width()
-            });
-            isFixed = true;
-        }
-        else if (!shouldBeFixed && isFixed)
-        {
-            nav.css({
-                position: 'static'
-            });
-            isFixed = false;
-        }
-    });
-});
-//]]>
-</script>

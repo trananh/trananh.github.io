@@ -148,7 +148,7 @@ sup {
     margin-top: 4em;
 }
 #navsidebar {
-    float: left;
+    position: static;
     padding: 15px 15px 0 15px;
 	background: white;
 	border-width: 2px;
@@ -161,6 +161,7 @@ sup {
 }
 /* This gets Google to fall into place */
 .social {
+    position: relative;
 	font-size: 1px;
 }
 /* This gets Facebook to fall into place */

@@ -12,6 +12,40 @@ layout: base
     </div>
 </div>
 
+<!-- floating side-nav -->
+<script type='text/javascript'>
+//<![CDATA[
+$(function() {
+    // Stick the #nav to the top of the window
+    var topPadding = 32
+    var nav = $('#navsidebar');
+    var navHomeY = nav.offset().top - topPadding;
+    var isFixed = false;
+    var $w = $(window);
+    $w.scroll(function() {
+        var scrollTop = $w.scrollTop();
+        var shouldBeFixed = scrollTop > navHomeY;
+        if (shouldBeFixed && !isFixed) {
+            nav.css({
+                position: 'fixed',
+                top: topPadding,
+                left: nav.offset().left,
+                width: nav.width()
+            });
+            isFixed = true;
+        }
+        else if (!shouldBeFixed && isFixed)
+        {
+            nav.css({
+                position: 'static'
+            });
+            isFixed = false;
+        }
+    });
+});
+//]]>
+</script>
+
 <!-- Start Page -->
 <div id="page">
 
