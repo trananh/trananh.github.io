@@ -139,6 +139,45 @@ sup {
 }
 
 
+
+/* Floating sidebar */
+#navsidewrap {
+    float: right;
+    height: 1px;
+    margin-right: -6.2em;
+    margin-top: 4em;
+}
+#navsidebar {
+    float: left;
+    padding: 15px 15px 0 15px;
+	background: white;
+	border-width: 2px;
+	border-style: solid solid solid none;
+	border-color: #ccc #ccc #ccc #ccc;
+    border-radius: 0px 0px 10px 0;
+	box-shadow: 2px 2px 8px #aaa;
+	-webkit-box-shadow: 2px 2px 8px #aaa;
+	-moz-box-shadow: 2px 2px 8px #aaa;
+}
+/* This gets Google to fall into place */
+.social {
+	font-size: 1px;
+}
+/* This gets Facebook to fall into place */
+.social iframe {
+	vertical-align: middle;
+}
+.social p {
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+/* Set an optional width for your button wrappers */
+/* .social span {display: inline-block; width: 110px; } */
+/* Adjust the widths individually if you like */
+/* .social .google { width: 75px; } */
+
+
+
 /* Header */
 #header {
 	position: relative;
@@ -558,6 +597,7 @@ pre > code {
 	background: white;
 	padding: 4em 3em 1.5em 3em;
 	border: 2px solid #ccc;
+	border-radius: 5px;
 }
 #disqus_thread {
 	box-shadow: 2px 2px 8px #aaa;

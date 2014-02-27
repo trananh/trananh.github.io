@@ -6,3 +6,6 @@
 .idea
 _site
 .DS_Store
+
+# Ignore drafts for now
+_drafts
