@@ -1,0 +1,18 @@
+<!-- Next & Previous post navigation -->
+<div style="width: 150px; float: left; text-align: left;">
+    {% if page.previous.url %}
+    <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">
+        &larr;&nbsp;&nbsp;Previous Post
+    </a>
+    {% endif %}
+</div>
+<div style="width: 150px; float: right; text-align: right;">
+    {% if page.next.url %}
+    <a href="{{page.next.url}}" title="Next Post: {{page.next.title}}">
+        Next Post&nbsp;&nbsp;&rarr;
+    </a>
+    {% endif %}
+</div>
+<div style="width: 150px; margin-left: auto; margin-right: auto; text-align: center;">
+    <a href="/blog/" title="Go to Blog">[&nbsp;Back to the Blog&nbsp;]</a>
+</div>

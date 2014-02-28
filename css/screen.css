@@ -84,6 +84,7 @@ sup {
 /* Site */
 #site {
 	max-width: 50em;
+	min-width: 550px;
 	margin: 1.5em auto 3em auto;
 	line-height:1.5em;
 }
@@ -363,6 +364,44 @@ sup {
 }
 .pagination-right {
   text-align: right;
+}
+
+
+
+/* Next-previous post navigation */
+#post-navigation-wrapper {
+    position: absolute;
+    top: -3em;
+    right: 0em;
+    width: 100%;
+}
+#post-navigation{
+    position: static;
+    font-size: 100%;
+    line-height: 1em;
+    width: 100%;
+    margin: 0px;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    background: white;
+    color: midnightblue;
+    z-index: 1;
+}
+#post-navigation a {
+    color: gray;
+}
+#post-navigation:hover a {
+    color: gray;
+}
+#post-navigation:hover a:hover {
+    color: maroon;
+    text-shadow: #aaa 2px 2px 3px;
+    text-decoration: none;
+}
+#post-navigation.active {
+	box-shadow: 0 4px 4px -2px #ccc;
+	-webkit-box-shadow: 0 4px 4px -2px #ccc;
+	-moz-box-shadow: 0 4px 4px -2px #ccc;
 }
 
 

@@ -12,45 +12,15 @@ layout: base
     </div>
 </div>
 
-<!-- floating side-nav -->
-<script type='text/javascript'>
-//<![CDATA[
-$(function() {
-    // Stick the #nav to the top of the window
-    var topPadding = 32
-    var nav = $('#navsidebar');
-    var navHomeY = nav.offset().top - topPadding;
-    var isFixed = false;
-    var $w = $(window);
-    $w.scroll(function() {
-        var scrollTop = $w.scrollTop();
-        var shouldBeFixed = scrollTop > navHomeY;
-        if (shouldBeFixed && !isFixed) {
-            nav.css({
-                position: 'fixed',
-                top: topPadding,
-                left: nav.offset().left,
-                width: nav.width()
-            });
-            isFixed = true;
-        }
-        else if (!shouldBeFixed && isFixed)
-        {
-            nav.css({
-                position: 'static'
-            });
-            isFixed = false;
-        }
-    });
-});
-//]]>
-</script>
-
 <!-- Start Page -->
 <div id="page">
 
     <div id="navheader">
-        {% include navtopmain.html %}
+        <div id="post-navigation-wrapper">
+            <div id="post-navigation">
+                {% include navtoppost.html %}
+            </div>
+        </div>
     </div>
 
     <h1 class="emphnext">{{ page.title }}</h1>
@@ -85,3 +55,126 @@ $(function() {
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     <!-- End Disqus -->
 {% endif %}
+
+
+<!-- Floating side social bar -->
+<script type='text/javascript'>
+//<![CDATA[
+function hideSocial(){
+    var minwidth = $('#site').width() + 200;
+    if ($(window).width() < minwidth) {
+            $("#navsidebar").fadeOut("slow");
+    } else {
+        $("#navsidebar").fadeIn("slow");
+    }
+}
+$(function() {
+    var minwidth = $('#site').width();
+    if ($(window).width() < minwidth) {
+            $("#navsidebar").hide();
+    }
+
+    // Stick the #navsidebar to the top of the window
+    var topPadding = 36
+    var nav = $('#navsidebar');
+    var site = $('#site');
+    var navHomeY = nav.offset().top - topPadding;
+    var navHomeLeftOffset = nav.offset().left - site.width() - site.offset().left;
+    var isFixed = false;
+    var $w = $(window);
+    $w.scroll(function() {
+        nav.css({
+            left: site.offset().left + site.width() + navHomeLeftOffset - $w.scrollLeft()
+        })
+        var scrollTop = $w.scrollTop();
+        var shouldBeFixed = scrollTop > navHomeY;
+        if (shouldBeFixed && !isFixed) {
+            nav.css({
+                position: 'fixed',
+                top: topPadding
+            });
+            isFixed = true;
+        }
+        else if (!shouldBeFixed && isFixed)
+        {
+            nav.css({
+                position: 'static'
+            });
+            isFixed = false;
+        }
+    });
+
+    // Need to account for resizing
+    $w.resize(function() {
+        hideSocial();
+
+        nav.css({
+            left: site.offset().left + site.width() + navHomeLeftOffset - $w.scrollLeft()
+        });
+    });
+});
+//]]>
+</script>
+
+<!-- Floating top posts-navigation bar -->
+<script type='text/javascript'>
+//<![CDATA[
+function hidePostsNav(){
+    if ($(window).height() < 150) {
+            $("#post-navigation").fadeOut("slow");
+    } else {
+        $("#post-navigation").fadeIn("slow");
+    }
+}
+$(function() {
+    if ($(window).height() < 150) {
+            $("#post-navigation").hide();
+    }
+    // Stick the #post-navigation to the top of the window
+    var topPadding = 0
+    var nav = $('#post-navigation');
+    var site = $('#site');
+    var navHomeY = nav.offset().top - topPadding;
+    var navHomeLeftOffset = nav.offset().left - site.offset().left;
+    var navHomeRightOffset = site.width() - nav.width() - navHomeLeftOffset;
+    var isFixed = false;
+    var $w = $(window);
+    $w.scroll(function() {
+        nav.css({
+            left: site.offset().left + navHomeLeftOffset - $w.scrollLeft(),
+            width: site.width() - navHomeLeftOffset - navHomeRightOffset
+        });
+
+        var scrollTop = $w.scrollTop();
+        var shouldBeFixed = scrollTop > navHomeY;
+        if (shouldBeFixed && !isFixed) {
+            nav.css({
+                position: 'fixed',
+                top: topPadding
+            });
+            nav.addClass('active');
+            isFixed = true;
+        }
+        else if (!shouldBeFixed && isFixed)
+        {
+            nav.css({
+                position: 'static'
+            });
+            nav.removeClass('active');
+            isFixed = false;
+        }
+    });
+
+    // Need to account for resizing
+    $w.resize(function() {
+        hidePostsNav();
+
+        // We'll need to recompute the left position & width on resize
+        nav.css({
+            left: site.offset().left + navHomeLeftOffset - $w.scrollLeft(),
+            width: site.width() - navHomeLeftOffset - navHomeRightOffset
+        });
+    });
+});
+//]]>
+</script>
