@@ -4,6 +4,8 @@
     <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}">
         &laquo;&nbsp;&nbsp;Prev Post
     </a>
+    {% else %}
+    <span style="color: #DCDCDC; font-weight: normal;">&laquo;&nbsp;&nbsp;Prev Post</span>
     {% endif %}
 </div>
 <div class="next">
@@ -11,6 +13,8 @@
     <a href="{{page.next.url}}" title="Next Post: {{page.next.title}}">
         Next Post&nbsp;&nbsp;&raquo;
     </a>
+    {% else %}
+    <span style="color: #DCDCDC; font-weight: normal;">Next Post&nbsp;&nbsp;&raquo;</span>
     {% endif %}
 </div>
 <div class="top">
