@@ -188,6 +188,18 @@ ul.compact li a {
 	font-size: 0.875em;
 	line-height: 1.714em;
 }
+.update {
+    background: whitesmoke;
+	padding: 1em 4.5714286% 1em 4.5714286%;
+	margin: 1.5em 0;
+	color: #888;
+	font-size: 0.875em;
+	line-height: 1.5em;
+	text-align: justify;
+}
+.update .title {
+    font-weight: bold;
+}
 
 
 
