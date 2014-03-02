@@ -8,22 +8,39 @@ title: anh &rarr; résumés
 <div>
 
     <div>
-        <p style="font-size: 87.5%; margin-bottom: 0; float: left;">
+        <p style="font-size: 87.5%; margin-bottom: 0; float: left; text-align: left;">
             [<a href="extended.html" title="Extended Résumé">Extended</a>]&nbsp;&nbsp;
             <b>Short</b>&nbsp;&nbsp;
             [<a href="uatranscript.html" title="UA Unofficial Transcript">UA Transcript</a>]&nbsp;&nbsp;
             [<a href="osutranscript.html" title="OSU Unofficial Transcript">OSU Transcript</a>]
         </p>
-        <p style="font-size: 87.5%; margin-bottom: 0; float: right;">
+        <p class="disappear-600px" style="font-size: 87.5%; margin-bottom: 0; float: right;">
             <a style="color: silver;" title="Download PDF"
                href="../data/documents/resumes/2014.01%20Resume%20%5BShort%5D.pdf"><i class="fa fa-download"></i></a>
         </p>
     </div>
 
     <center>
-        <iframe style="margin-bottom: 1.5em"
-                src="http://docs.google.com/viewer?url=trananh.github.io%2Fdata%2Fdocuments%2Fresumes%2F2014.01%20Resume%20%5BShort%5D.pdf&embedded=true"
-                width="100%" height="840" style="border: 1px solid #ccc;"></iframe>
+        <div id="wrapper" style="width: 100%; height: 900px; margin-bottom: 3em;">
+        <iframe src="http://docs.google.com/viewer?url=trananh.github.io%2Fdata%2Fdocuments%2Fresumes%2F2014.01%20Resume%20%5BShort%5D.pdf&embedded=true"
+                width="100%" height="100%"></iframe>
+        </div>
     </center>
 
 </div>
+
+
+<script type='text/javascript'>
+//<![CDATA[
+$(function() {
+    var $w = $(window);
+    var frame = $('#wrapper');
+    frame.height(frame.width() * 1.28571429);
+
+    // Need to account for resizing
+    $w.resize(function() {
+        frame.height(frame.width() * 1.28571429);
+    });
+});
+//]]>
+</script>

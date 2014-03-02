@@ -21,9 +21,26 @@ title: anh &rarr; résumés
     </div>
 
     <center>
-        <iframe style="margin-bottom: 1.5em"
-                src="http://docs.google.com/viewer?url=trananh.github.io%2Fdata%2Fdocuments%2Fresumes%2F2014.01%20Resume%20%5BExtended%5D.pdf&embedded=true"
-                width="100%" height="840" style="border: 1px solid #ccc;"></iframe>
+        <div id="wrapper" style="width: 100%; height: 900px; margin-bottom: 3em;">
+            <iframe src="http://docs.google.com/viewer?url=trananh.github.io%2Fdata%2Fdocuments%2Fresumes%2F2014.01%20Resume%20%5BExtended%5D.pdf&embedded=true"
+                    width="100%" height="100%"></iframe>
+        </div>
     </center>
 
 </div>
+
+
+<script type='text/javascript'>
+//<![CDATA[
+$(function() {
+    var $w = $(window);
+    var frame = $('#wrapper');
+    frame.height(frame.width() * 1.28571429);
+
+    // Need to account for resizing
+    $w.resize(function() {
+        frame.height(frame.width() * 1.28571429);
+    });
+});
+//]]>
+</script>

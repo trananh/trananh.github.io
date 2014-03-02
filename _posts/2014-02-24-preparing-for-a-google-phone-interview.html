@@ -399,16 +399,16 @@ comments: true
     <ul>
         <li>Information on System Design:
             <a href="http://research.google.com/pubs/DistributedSystemsandParallelComputing.html"
-            target="_blank">http://research.google.com/pubs/DistributedSystemsandParallelComputing.html</a>
+            target="_blank">[here]</a>
         </li>
         <li>Google File System: <a href="http://research.google.com/archive/gfs.html" target="_blank">
-            http://research.google.com/archive/gfs.html</a>
+            [here]</a>
         </li>
         <li>Google Bigtable: <a href="http://research.google.com/archive/bigtable.html" target="_blank">
-            http://research.google.com/archive/bigtable.html</a>
+            [here]</a>
         </li>
         <li> Google MapReduce: <a href="http://research.google.com/archive/mapreduce.html" target="_blank">
-            http://research.google.com/archive/mapreduce.html</a>
+            [here]</a>
         </li>
     </ul>
 </p>
@@ -486,9 +486,12 @@ comments: true
 <p>
     And lastly, watch this pitch by Google:<br/>
 </p>
-<p style="text-align: center;">
-    <iframe width="480" height="360" src="//www.youtube.com/embed/w887NIa_V9w" frameborder="4" allowfullscreen></iframe>
-</p>
+<center>
+    <div id="wrapper" style="width: 68.571429%; height: 360">
+        <iframe width="100%" height="100%" src="//www.youtube.com/embed/w887NIa_V9w"
+                frameborder="4" allowfullscreen></iframe>
+    </div>
+</center>
 <hr/>
 
 
@@ -506,3 +509,19 @@ comments: true
     <i>Did you find my list of resources helpful or have you found some helpful links that I should include?
         Please leave a comment below and let me know about it.</i>
 </p>
+
+
+<script type='text/javascript'>
+//<![CDATA[
+$(function() {
+    var $w = $(window);
+    var frame = $('#wrapper');
+    frame.height(frame.width() * .75);
+
+    // Need to account for resizing
+    $w.resize(function() {
+        frame.height(frame.width() * .75);
+    });
+});
+//]]>
+</script>

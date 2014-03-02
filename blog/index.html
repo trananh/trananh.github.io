@@ -9,27 +9,27 @@ keywords: Anh Tran, Blog, Research, Programming, Hobbies, Family, Personal
 <h1 style="float: left;">Anh's Blog</h1>
 
 <a href="/blog/atom.xml" title="Atom feed">
-    <img src="/images/rss.png" width="22" style="float: right;" >
+    <img src="/images/rss.png" width="3.1428571%" style="float: right; min-width: 18px" >
 </a>
 <p>&nbsp;</p>
 
-<hr style="margin-bottom: 1.5em;"/>
+<hr style="margin-bottom: 1.5em;">
 
 {% for post in paginator.posts %}
     <div class="section list">
-        <h1 style="text-align: left">{{ post.date | date_to_string }}</h1>
+        <h1 style="text-align: left;">{{ post.date | date_to_string }}</h1>
         <p class="line">
             <a class="title" href="{{ post.url }}">{{ post.title }}</a>
+            <a class="comments disappear-680px" href="{{ post.url }}#disqus_thread">View Comments</a>
             {% if post.categories.size > 0 %}
-            <span style="color: silver; font-style: italic">&nbsp;&nbsp;-&nbsp;&nbsp;
-                {{ post.categories | first }}
+            <span class="category disappear-720px">&nbsp;&laquo;&nbsp;
+                {{ post.categories | first }}&nbsp;
                 {% assign stop = post.categories.size | minus:1 %}
                 {% for i in (1..stop) %}
                 |&nbsp;{{ post.categories[i] }}
                 {% endfor %}
             </span>
             {% endif %}
-            <a class="comments" href="{{ post.url }}#disqus_thread">View Comments</a>
         </p>
         <p class="excerpt" style="margin-bottom: 2em;">{{ post.excerpt }}</p>
     </div>

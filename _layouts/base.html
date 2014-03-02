@@ -23,10 +23,17 @@
     <!-- Include jQuery -->
     <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
 
+    <!-- Prevent zoom on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
 </head>
 <body>
 
     <div id="site">
+
+        <div id="header">
+            {% include header.html %}
+        </div>
 
         {{ content }}
 
