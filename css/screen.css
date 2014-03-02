@@ -303,7 +303,7 @@ ul.compact li a {
     color: maroon;
     text-decoration: none;
 }
-/* Reformat section on mobile devices */
+/* Reformat main navigation bar mobile devices */
 @media screen and (max-width: 37.5em) {         /* 600 px */
     #navtop .main {
         position: relative;
@@ -631,6 +631,7 @@ p.excerpt {
     color: black;
 }
 
+/* Reformat blogs listing on mobile devices */
 @media screen and (max-width: 48em) {           /* 768 px */
     .list {
         padding-right: 1.5em;
