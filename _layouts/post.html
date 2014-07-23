@@ -68,10 +68,10 @@ $(function() {
     hideSideBar();
 
     // Stick the #navsidebar to the top of the window
-    var topPadding = 46
+    var topPadding = 46                             // floating position from top
     var nav = $('#navsidebar');
     var site = $('#site');
-    var navHomeY = 112 - topPadding;                 // nav.offset().top - topPadding;
+    var navHomeY = 112 - topPadding;                // nav.offset().top - topPadding;
     var isFixed = false;
     var $w = $(window);
     $w.scroll(function() {
