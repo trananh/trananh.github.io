@@ -200,7 +200,23 @@ ul.compact li a {
 .update .title {
     font-weight: bold;
 }
-
+.abstract {
+	display: none;
+	padding: 1em 1.5em 1em 6em;
+	margin: -1em 0 1.5em 0;
+	color: #888;
+	font-size: 0.875em;
+	line-height: 1.5em;
+	text-align: justify;
+}
+.abstract .title {
+	position: absolute;
+	margin-left: -5em;
+    font-weight: bold;
+    font-variant: small-caps;
+    width: 4.5em;
+    text-align: right;
+}
 
 
 /* Header at the top of site */
