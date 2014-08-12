@@ -28,9 +28,15 @@ title: anh &rarr; research
             2014.
             <br/>
             <b>[&nbsp;<a href>abstract</a> |
-                *<a href="../data/documents/papers/dissertation.pdf">pdf</a> |
-                <a href="../data/documents/papers/dissertation.bib">bib</a> |
-                <a href="https://github.com/trananh/vlsa/releases/tag/vlsa-1.0.2">code</a>&nbsp;]</b>
+                *<a href="{{ site.url }}/data/documents/papers/dissertation.pdf">pdf</a> |
+                <a href="{{ site.url }}/data/documents/papers/dissertation.bib">bib</a> |
+                <a href="https://github.com/trananh/vlsa/releases/tag/vlsa-1.0.2">code</a> |
+                <a href>slides</a>
+                <span style="display: none;" class="slides">
+                    (<a href="{{ site.url }}/data/documents/talks/defense.pptx">pptx</a>)
+                    (<a href="{{ site.url }}/data/documents/talks/defense.pdf">pdf</a>)
+                </span>
+                ]</b>
         </p>
         <div class="abstract">
             <span class="title">Abstract:</span>
@@ -62,8 +68,8 @@ title: anh &rarr; research
             2014.
             <br/>
             <b>[&nbsp;<a href>abstract</a> |
-                <a href="../data/documents/papers/starsem2014-vlsa.pdf">pdf</a> |
-                <a href="../data/documents/papers/starsem2014-vlsa.bib">bib</a> |
+                <a href="{{ site.url }}/data/documents/papers/starsem2014-vlsa.pdf">pdf</a> |
+                <a href="{{ site.url }}/data/documents/papers/starsem2014-vlsa.bib">bib</a> |
                 <a href="https://github.com/trananh/vlsa/releases/tag/vlsa-1.0.1">code</a>&nbsp;]</b>
         </p>
         <div class="abstract">
@@ -91,8 +97,8 @@ title: anh &rarr; research
             2011.
             <br/>
             <b>[&nbsp;<a href>abstract</a> |
-                <a href="../data/documents/papers/ijcai2011-fluents.pdf">pdf</a> |
-                <a href="../data/documents/papers/ijcai2011-fluents.bib">bib</a> |
+                <a href="{{ site.url }}/data/documents/papers/ijcai2011-fluents.pdf">pdf</a> |
+                <a href="{{ site.url }}/data/documents/papers/ijcai2011-fluents.bib">bib</a> |
                 <a href="https://code.google.com/p/ua-time-series/">code</a>&nbsp;]</b>
         </p>
         <div class="abstract">
@@ -114,8 +120,8 @@ title: anh &rarr; research
             2011.
             <br/>
             <b>[&nbsp;<a href>abstract</a> |
-                <a href="../data/documents/papers/aaai2011-workshop.pdf">pdf</a> |
-                <a href="../data/documents/papers/aaai2011-workshop.bib">bib</a>&nbsp;]</b>
+                <a href="{{ site.url }}/data/documents/papers/aaai2011-workshop.pdf">pdf</a> |
+                <a href="{{ site.url }}/data/documents/papers/aaai2011-workshop.bib">bib</a>&nbsp;]</b>
         </p>
         <div class="abstract">
             <span class="title">Abstract:</span>
@@ -141,8 +147,8 @@ title: anh &rarr; research
             2009.
             <br/>
             <b>[&nbsp;<a href>abstract</a> |
-                <a href="../data/documents/papers/iui2009-tasktracer.pdf">pdf</a> |
-                <a href="../data/documents/papers/iui2009-tasktracer.bib">bib</a> |
+                <a href="{{ site.url }}/data/documents/papers/iui2009-tasktracer.pdf">pdf</a> |
+                <a href="{{ site.url }}/data/documents/papers/iui2009-tasktracer.bib">bib</a> |
                 <a href="http://tasktracer.osuosl.org/">code</a>&nbsp;]</b>
         </p>
         <div class="abstract">
@@ -185,6 +191,12 @@ $(document).ready(function(){
 			function(){ $(this).text("abstract") }
 		);
 
+		$("a:contains('slides')").click(function(event) {
+			$(this).nextAll(".slides").first().toggle(); });
+	    $("a:contains('slides')").toggle(
+			function(){ $(this).text("slides: ") },
+			function(){ $(this).text("slides") }
+		);
 });
 //]]>
 </script>
