@@ -9,7 +9,7 @@ paginate_path       : "blog/page:num"
 permalink           : /blog/:categories/:year/:month/:day/:title.html
 
 # Site's URL
-url                 : http://trananh.github.io
+url                 : https://trananh.github.io
 
 # Disqus configs
 comments            : false
