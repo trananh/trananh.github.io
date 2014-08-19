@@ -9,6 +9,8 @@ category: work
 comments: true
 ---
 
+<span itemscope itemtype="http://schema.org/Event">
+
 <div class="update">
     <span class="title">Update [08.2014] - </span>
     My dissertation and defense presentation are now available for download. <br/>
@@ -23,7 +25,7 @@ comments: true
 <table style="padding:5px">
     <tr>
         <td align="right" style="vertical-align: top; padding-right: 10px"><b>Date:</b></td>
-        <td>April 30th, 2014</td>
+        <td itemprop="startDate" content="2014-04-30T09:00">April 30th, 2014</td>
     </tr>
     <tr>
         <td align="right" style="vertical-align: top; padding-right: 10px"><b>Time:</b></td>
@@ -31,7 +33,8 @@ comments: true
     </tr>
     <tr>
         <td align="right" style="vertical-align: top; padding-right: 10px"><b>Location:</b></td>
-        <td>Gould-Simpson, Room 1027
+        <td itemprop="location" itemscope itemtype="http://schema.org/Place">
+            <span itemprop="name">Gould-Simpson, Room 1027</span>
             <a target="_blank" title="Google Map" href="https://goo.gl/maps/1Yw8n" style="color: gray">
                 [<i class="fa fa-map-marker"></i>]
             </a>
@@ -40,7 +43,9 @@ comments: true
     <tr><td>&nbsp;</td></tr>
     <tr>
         <td align="right" style="vertical-align: top; padding-right: 10px"><b>Candidate:</b></td>
-        <td>Anh Xuan Tran</td>
+        <td itemprop="performer" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">Anh Xuan Tran</span>
+        </td>
     </tr>
     <tr>
         <td align="right" style="vertical-align: top; padding-right: 10px"><b>Committee:</b></td>
@@ -87,3 +92,8 @@ comments: true
     </tr>
 
 </table>
+
+<meta itemprop="url" content="{{ page.url }}">
+<meta itemprop="description" content="Title: Identifying Latent Attributes from Video Scenes Using Knowledge Acquired from Large Collections of Text Documents">
+
+</span>
