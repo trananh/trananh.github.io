@@ -9,7 +9,7 @@ layout: base
 </div>
 
 <!-- Start Page -->
-<div id="page">
+<div itemscope itemtype="http://schema.org/BlogPosting" id="page">
 
     <div id="navtop">
         <div class="post-navigation-wrapper">
@@ -19,15 +19,24 @@ layout: base
         </div>
     </div>
 
-    <h1 class="emphnext">{{ page.title }}</h1>
+    <h1 itemprop="name" class="emphnext">{{ page.title }}</h1>
 
+    <span itemprop="articleBody">
     {{ content }}
+    </span>
 
     <address class="signature">
-        <a class="author" href="/">Anh&nbsp;X&nbsp;Tran</a>
-        <span class="date">{{ page.date | date_to_long_string }}</span>
+        <a class="author" href="/">
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <span itemprop="name">Anh&nbsp;X&nbsp;Tran</span>
+            </span>
+        </a>
+        <span itemprop="datePublished" content="{{ page.date| date: '%Y-%m-%d' }}" class="date">{{ page.date | date_to_long_string }}</span>
         <span class="location">{{ page.location }}</span>
     </address>
+
+    <meta itemprop="url" content="{{ site.url }}{{ page.url }}">
+    <meta itemprop="description" content="{{ page.excerpt }}">
 
 </div>
 <!-- End Page -->
