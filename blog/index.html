@@ -15,11 +15,14 @@ keywords: Anh Tran, Blog, Research, Programming, Hobbies, Family, Personal
 
 <hr style="margin-bottom: 1.5em;">
 
+<span itemscope itemtype="http://schema.org/Blog">
+
 {% for post in paginator.posts %}
-    <div class="section list">
-        <h1 style="text-align: left;">{{ post.date | date_to_string }}</h1>
+    <div itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="section list">
+        <h1 itemprop="datePublished" content="{{ post.date | date: '%Y-%m-%d' }}"
+            style="text-align: left;">{{ post.date | date_to_string }}</h1>
         <p class="line">
-            <a class="title" href="{{ post.url }}">{{ post.title }}</a>
+            <a itemprop="name" class="title" href="{{ post.url }}">{{ post.title }}</a>
             <a class="comments disappear-680px" href="{{ post.url }}#disqus_thread">View Comments</a>
             {% if post.categories.size > 0 %}
             <span class="category disappear-720px">&nbsp;&laquo;&nbsp;
@@ -31,10 +34,16 @@ keywords: Anh Tran, Blog, Research, Programming, Hobbies, Family, Personal
             </span>
             {% endif %}
         </p>
-        <p class="excerpt" style="margin-bottom: 2em;">{{ post.excerpt }}</p>
+        <p itemprop="description" class="excerpt" style="margin-bottom: 2em;">{{ post.excerpt }}</p>
+
+        <meta itemprop="url" content="{{ site.url }}{{ post.url }}">
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="name" content="Anh X Tran"/>
+        </span>
     </div>
 {% endfor %}
 
+</span>
 
 <span style="text-align: center">
     {% include navpagination.html %}
