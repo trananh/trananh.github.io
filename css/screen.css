@@ -434,6 +434,28 @@ ul.compact li a {
 }
 
 
+/* Floating wedding nav bar */
+#navweddingwrapper {
+    position: absolute;
+    margin-top: 4em;
+    margin-right: 0em;
+    height: 1px;
+}
+#navweddingbar {
+    position: static;
+    padding: 15px 15px 0 15px;
+	background: white;
+	text-align: center;
+	border-width: 2px;
+	border-style: solid solid solid none;
+	border-color: #ccc #ccc #ccc #ccc;
+    border-radius: 0px 0px 10px 0;
+	box-shadow: 2px 2px 8px #aaa;
+	-webkit-box-shadow: 2px 2px 8px #aaa;
+	-moz-box-shadow: 2px 2px 8px #aaa;
+}
+
+
 
 /* Posts navigation (pagination) */
 .pagination {
