@@ -12,8 +12,8 @@ title: anh &amp; naka wedding
     <meta itemprop="location" content="Abernethy Center, OR">
 </span>
 
-<div id="navweddingwrapper">
-    <div id="navweddingbar">
+<div id="navweddingwrapper" style="position: absolute; margin-top: 4em; margin-left: -60px; height: 1px;">
+    <div id="navsidebar" style="border-radius: 0px 10px 0px 0;">
         <div id="navwedding">
             <p><a title="Home" href="#">Home</a></p>
             <p><a title="About Us" href="#about">About Us</a></p>
@@ -143,20 +143,20 @@ title: anh &amp; naka wedding
 <!-- Floating side social bar -->
 <script type='text/javascript'>
 function hideSideBar() {
-    var minWidth = $('#site').width()  + ($('#navweddingbar').width() + 50) * 2;
+    var minWidth = $('#site').width()  + ($('#navsidebar').width() + 50) * 2;
     if ($(window).width() < minWidth) {
-        $('#navweddingbar').css("display","none")
-    } else if ($('#navweddingbar').css("display") === 'none') {
-        $('#navweddingbar').css("display","")
+        $('#navsidebar').css("display","none")
+    } else if ($('#navsidebar').css("display") === 'none') {
+        $('#navsidebar').css("display","")
     }
 }
 //<![CDATA[
 $(function() {
     hideSideBar();
 
-    // Stick the #navweddingbar to the top of the window
+    // Stick the #navsidebar to the top of the window
     var topPadding = 46                             // floating position from top
-    var nav = $('#navweddingbar');
+    var nav = $('#navsidebar');
     var site = $('#site');
     var navHomeY = 112 - topPadding;                // nav.offset().top - topPadding;
     var isFixed = false;
