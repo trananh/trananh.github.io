@@ -42,7 +42,7 @@
                                         box-shadow: -2px 2px 8px #aaa;
                                         -webkit-box-shadow: -2px 2px 8px #aaa;
                                         -moz-box-shadow: -2px 2px 8px #aaa;">
-                <div id="navwedding" style="width: 83px; font-family: Goudy Old Style; font-weight: bold; font-size: 1.2em;">
+                <div id="navwedding" style="width: 83px; font-family: Goudy Old Style; font-weight: bold; font-size: 1em;">
                     <p style="margin: 0 0 1em 0;"><a style="color: #4D827D;" title="Home" href="#">Home</a></p>
                     <p style="margin: 0 0 1em 0;"><a style="color: #4D827D;" title="About Us" href="#about">About Us</a></p>
                     <p style="margin: 0 0 1em 0;"><a style="color: #4D827D;" title="Events Info" href="#events">Events Info</a></p>
@@ -86,7 +86,70 @@
             <hr style="margin: 3em 0 3em 0;"/>
             <h1 id="events" style="font-family: Papyrus;">Events Information</h1>
             <p>
-                Some text.
+                <b>Traditional Vietnamese Ceremony:</b><br />
+                <table style="padding:5px">
+                    <tr>
+                        <td align="right" style="vertical-align: top; padding-right: 10px"><b>Date:</b></td>
+                        <td>June 19, 2014</td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="vertical-align: top; padding-right: 10px"><b>Time:</b></td>
+                        <td>10AM - 12PM</td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="vertical-align: top; padding-right: 10px"><b>Location:</b></td>
+                        <td>The Groom's Residence</td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="vertical-align: top; padding-right: 10px"><b>Description:</b></td>
+                        <td>Please join us in the morning for a traditional Vietnamese ceremony.
+                        The groom's family will travel to the bride's household bringing offerings to
+                        ask the bride's family for their blessings. The ceremony will move back to
+                        the groom's residence afterwards and will conclude with a small lunch.
+                        </td>
+                    </tr>
+                </table>
+                
+                <br />
+                
+                <b>Wedding Ceremony & Reception:</b><br />
+                <table style="padding:5px">
+                    <tr>
+                        <td align="right" style="vertical-align: top; padding-right: 10px"><b>Date:</b></td>
+                        <td>June 19, 2014</td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="vertical-align: top; padding-right: 10px"><b>Time:</b></td>
+                        <td>5:15PM - 10PM</td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="vertical-align: top; padding-right: 10px"><b>Location:</b></td>
+                        <td>Abernethy Center, Abigail's Garden
+                            <a target="_blank" title="Google Map" href="https://goo.gl/maps/1Yw8n" style="color: gray">
+                                [<i class="fa fa-map-marker"></i>]
+                            </a>
+                            <br />
+                            <b>[&nbsp;<a href>abstract</a>&nbsp;]</b>
+                            <div class="abstract">
+                                <img class="inset right" src="/images/abernethymap.png" title="Abernethy Map"
+                                    width="50%" style="min-width: 100px; max-width: 350px"/>
+                                <span class="title">Direction to Abigail's Garden, Abernethy Center:</span>
+                                From I-205 North or South, take Exit 10 and veer right onto Hwy. 213.
+                                At the first signal, turn right onto Prairie Schooner Way. At the signal,
+                                take a left on Washington Street. Turn left on 15th Street. Abigail's Garden
+                                is located on the left-hand side of 15th Street at the intersection of 15th
+                                and John Adams Streets.
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" style="vertical-align: top; padding-right: 10px"><b>Description:</b></td>
+                        <td>Please join us in the evening for the Wedding ceremony and reception.
+                        There will be dinner, dancing, and fun times to follow!
+                        </td>
+                    </tr>
+                </table>
+                
             </p>
             
             
@@ -100,7 +163,7 @@
             <hr style="margin: 3em 0 3em 0;"/>
             <h1 id="contact" style="font-family: Papyrus;">Contact Us</h1>
             <p>
-            Please leave a comment below, or email us at nakajaa[at]gmail[dot]com
+            Please leave a comment below, or email us at: nakajaa (at) gmail (dot) com
             </p>
 
         </div>
@@ -173,6 +236,28 @@ $(function() {
             left: site.offset().left - 115
         });
     });
+});
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+
+		$("a:contains('abstract')").click(function(event) {
+			$(this).parent().parent().nextAll(".abstract").first().slideToggle("fast"); });
+
+		$("a:contains('abstract')").toggle(
+			function(){ $(this).text("hide abstract") },
+			function(){ $(this).text("abstract") }
+		);
+
+		$("a:contains('slides')").click(function(event) {
+			$(this).nextAll(".slides").first().toggle(); });
+	    $("a:contains('slides')").toggle(
+			function(){ $(this).text("slides: ") },
+			function(){ $(this).text("slides") }
+		);
 });
 //]]>
 </script>
