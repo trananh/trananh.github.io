@@ -92,7 +92,7 @@
             <hr style="margin: 3em 0 3em 0;"/>
             <h1 id="events" style="font-family: Papyrus;">Events Information</h1>
             <p>
-                <b>Traditional Vietnamese Ceremony:</b><br />
+                <b>Traditional Vietnamese Ceremony:</b>
                 <table style="padding:5px">
                     <tr>
                         <td align="right" style="vertical-align: top; padding-right: 10px"><b>Date:</b></td>
@@ -131,11 +131,11 @@
                     <tr>
                         <td align="right" style="vertical-align: top; padding-right: 10px"><b>Location:</b></td>
                         <td>Abernethy Center, Abigail's Garden
-                            <a target="_blank" title="Google Map" href="https://goo.gl/maps/1Yw8n" style="color: gray">
+                            <a target="_blank" title="Google Map" href="https://goo.gl/maps/zHzRU" style="color: gray">
                                 [<i class="fa fa-map-marker"></i>]
                             </a>
                             <br />
-                            <b>[&nbsp;<a href>abstract</a>&nbsp;]</b>
+                            <b>[&nbsp;<a id="directions" href>Directions</a>&nbsp;]</b>
                             <div class="abstract">
                                 <img class="inset right" src="/images/abernethymap.png" title="Abernethy Map"
                                     width="50%" style="min-width: 100px; max-width: 350px"/>
@@ -254,19 +254,12 @@ $(function() {
 //<![CDATA[
 $(document).ready(function(){
 
-		$("a:contains('abstract')").click(function(event) {
-			$(this).parent().parent().nextAll(".abstract").first().slideToggle("fast"); });
+		$("#directions").click(function(event) {
+			$(".abstract").slideToggle("fast"); });
 
-		$("a:contains('abstract')").toggle(
-			function(){ $(this).text("hide abstract") },
-			function(){ $(this).text("abstract") }
-		);
-
-		$("a:contains('slides')").click(function(event) {
-			$(this).nextAll(".slides").first().toggle(); });
-	    $("a:contains('slides')").toggle(
-			function(){ $(this).text("slides: ") },
-			function(){ $(this).text("slides") }
+		$("#directions").toggle(
+			function(){ $(this).text("Hide Directions") },
+			function(){ $(this).text("Directions") }
 		);
 });
 //]]>
