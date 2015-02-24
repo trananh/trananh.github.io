@@ -135,11 +135,14 @@
                                 [<i class="fa fa-map-marker"></i>]
                             </a>
                             <br />
-                            <b>[&nbsp;<a id="directions" href>Directions</a>&nbsp;]</b>
-                            <div class="abstract">
+                            <b>[&nbsp;<a id="lnkdirections" href>show directions</a>&nbsp;]</b>
+                            <div id="directions" style="display: none; color: #888;
+                                                        font-size: 0.875em;
+                                                        line-height: 1.5em;
+                                                        text-align: justify;">
                                 <img class="inset right" src="/images/abernethymap.png" title="Abernethy Map"
                                     width="50%" style="min-width: 100px; max-width: 350px"/>
-                                <span class="title">Direction to Abigail's Garden, Abernethy Center:</span>
+                                <span style="font-variant: small-caps;">Direction to Abigail's Garden:</span>
                                 From I-205 North or South, take Exit 10 and veer right onto Hwy. 213.
                                 At the first signal, turn right onto Prairie Schooner Way. At the signal,
                                 take a left on Washington Street. Turn left on 15th Street. Abigail's Garden
@@ -254,12 +257,12 @@ $(function() {
 //<![CDATA[
 $(document).ready(function(){
 
-		$("#directions").click(function(event) {
-			$(".abstract").slideToggle("fast"); });
+		$("#lnkdirections").click(function(event) {
+			$("#directions").slideToggle("fast"); });
 
-		$("#directions").toggle(
-			function(){ $(this).text("Hide Directions") },
-			function(){ $(this).text("Directions") }
+		$("#lnkdirections").toggle(
+			function(){ $(this).text("hide directions") },
+			function(){ $(this).text("show directions") }
 		);
 });
 //]]>
