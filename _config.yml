@@ -1,7 +1,7 @@
 exclude             : [".ruby-version", "Gemfile", "Gemfile.lock", "README.md"]
 safe                : true
 lsi                 : false
-pygments            : true
+highlighter         : rouge
 
 # Post configs
 paginate            : 5
